@@ -36,7 +36,7 @@ Route::post('login', [AutfKontroler::class, 'login']);
 
 
 
-Route::group(['middlware'=>['auth:sanctum']], function() {
+Route::group(['middleware'=>['auth:sanctum']], function() {
     Route::resource('forum', ForumKontroler::class)->only('index', 'show', 'destroy', 'update');
     Route::resource('clan', ClanKontroler::class)->only('index', 'show');
     Route::post('logout', [AutfKontroler::class, 'logout']);

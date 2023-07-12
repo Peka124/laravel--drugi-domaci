@@ -15,11 +15,11 @@ class ClanResurs extends JsonResource
     public function toArray($request)
     {
         return [
-            'ID -' =>$this->resource->id,
-            'IME I PREZIME -' =>$this->resource->imePrezime,
-            'USERNAME -' =>$this->resource->username,
-            'EMAIL -' =>$this->resource->email,
-            'FORUM -' =>new ForumResurs($this->resource->forum),
+            'id' =>$this->resource->id,
+            'imePrezime' =>$this->resource->imePrezime,
+            'username' =>$this->resource->username,
+            'email' =>$this->resource->email,
+            'forum' =>new ForumResurs($this->resource->forum),
         ];
         
     }

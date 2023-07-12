@@ -15,11 +15,11 @@ class ForumResurs extends JsonResource
     public function toArray($request)
     {
         return [
-            'ID -' =>$this->resource->id,
-            'URL -' =>$this->resource->url,
-            'EMAIL -' =>$this->resource->email,
-            'INSTAGRAM -' =>$this->resource->instagram,
-            'OSNIVAC -' =>$this->resource->osnivac
+            'id' =>$this->resource->id,
+            'url' =>$this->resource->url,
+            'email' =>$this->resource->email,
+            'instagram' =>$this->resource->instagram,
+            'osnivac' =>$this->resource->osnivac
         ];
         
     }

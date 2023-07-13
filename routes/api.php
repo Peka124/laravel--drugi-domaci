@@ -17,16 +17,28 @@ use App\Http\Controllers\AutfKontroler;
 |
 */
 
+// Route::resource('forum', ForumKontroler::class)->only('index', 'show', 'destroy', 'update');
+// Route::resource('clan', ClanKontroler::class)->only('idex', 'show');
+
+// Route::post('register', [AutfKontroler::class, 'register']);
+// Route::post('login', [AutfKontroler::class, 'login']);
+// Route::post('logout', [AutfKontroler::class, 'logout']);
+
+// Route::middleware('auth:sanctum')->get('/user', function(Request $request) {
+//     Route::resource('forum', ForumKontroler::class)->only('index', 'show', 'destroy', 'update');
+//     Route::resource('clan', ClanKontroler::class)->only('index', 'show');
+// });
+
+
 
 Route::post('register', [AutfKontroler::class, 'register']);
 Route::post('login', [AutfKontroler::class, 'login']);
-Route::resource('forum', ForumKontroler::class)->only('index', 'show', 'destroy', 'update');
-Route::resource('clan', ClanKontroler::class)->only('index', 'show');
+
 
 
 Route::group(['middleware'=>['auth:sanctum']], function() {
-    // Route::resource('forum', ForumKontroler::class)->only('index', 'show', 'destroy', 'update');
-    // Route::resource('clan', ClanKontroler::class)->only('index', 'show');
+    Route::resource('forum', ForumKontroler::class)->only('index', 'show', 'destroy', 'update');
+    Route::resource('clan', ClanKontroler::class)->only('index', 'show');
     Route::post('logout', [AutfKontroler::class, 'logout']);
 });
 

@@ -33,7 +33,8 @@ use App\Http\Controllers\AutfKontroler;
 
 Route::post('register', [AutfKontroler::class, 'register']);
 Route::post('login', [AutfKontroler::class, 'login']);
-
+// Route::resource('forum', ForumKontroler::class)->only('index', 'show', 'destroy', 'update');
+// Route::resource('clan', ClanKontroler::class)->only('index', 'show');
 
 
 Route::group(['middleware'=>['auth:sanctum']], function() {
